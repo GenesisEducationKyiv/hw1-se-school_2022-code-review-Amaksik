@@ -32,14 +32,15 @@ Project is created with:
 * Express.js
 	
 ## Setup
+Register in [SMTP service](https://mailtrap.io/) and put credentials in default.json file!
 To run this project, clone it locally using git bash:
 ```
 $ git clone ...
 $ npm install
-register in [SMTP service](https://mailtrap.io/) and put credentials in default.json
 $ npm start
 ```
-Otherwise, DOCKER can be also used for running that project. But credentials still should be added!
+Otherwise, DOCKER can be also used for running that project.
+But credentials still should be added!
 
 
 ## Materials ##
