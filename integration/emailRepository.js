@@ -1,8 +1,7 @@
-const fs = require('fs');
 var dbfunctions = require("./dbfunctions.js")
 
 
-export default class emailRepository{
+class emailRepository{
 
     constructor(jsonPath){
         this.filePath = jsonPath;
@@ -13,7 +12,7 @@ export default class emailRepository{
     addEmail(email){
         let emails = dbfunctions.dbread(this.filePath);
         emails.push(email);
-        dbfunctions.dbwrite(emails);
+        dbfunctions.dbwrite(this.filePath, emails);
     }
 
     getEmails() {
@@ -22,7 +21,7 @@ export default class emailRepository{
     }
     
     updateEmail(){
-
+        //not implemented
     }
 
     deleteEmail(email){
@@ -31,3 +30,5 @@ export default class emailRepository{
         dbfunctions.dbwrite(this.filePath, emails);
     }
 }
+
+module.exports = emailRepository;
