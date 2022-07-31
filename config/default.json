@@ -1,0 +1,13 @@
+{
+    "currency": "USD",
+    "apiUrl" : "https://cex.io/api/last_price/",
+    "nodemailer": {
+        "host": "smtp.mailtrap.io",
+        "port": 2525,
+        "auth": {
+            "user": "***",
+            "pass": "***"
+        }
+    },
+    "filelocation" : "./integration/emaildb.json"
+}
