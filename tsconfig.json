@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2021",
+    "target": "es6",
     "lib": [
-      "es2021",
+      "es6",
       "esnext.asynciterable"
     ],
     "typeRoots": [
       "./node_modules/@types",
-      "./src/types"
+      "./src/types",
+      "node"
     ],
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,

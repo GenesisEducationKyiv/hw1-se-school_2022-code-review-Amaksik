@@ -1,9 +1,5 @@
-import { Container, Service, Inject } from 'typedi';
-import { IUser, IUserInputDTO } from '@/interfaces/IUser';
-import { EventDispatcher, EventDispatcherInterface } from '@/decorators/eventDispatcher';
-import events from '@/subscribers/events';
-import Agenda from 'agenda';
-import { RateClient } from '@/clients/cexio';
+import { Service, Inject } from 'typedi';
+import { RateClient } from '../clients/cexio';
 
 @Service()
 export default class RateService {

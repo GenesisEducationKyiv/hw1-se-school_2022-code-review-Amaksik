@@ -1,6 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { Container } from 'typedi';
-import MailService from '@/services/mail';
+import MailService from '../../services/mail';
 import { celebrate, Joi } from 'celebrate';
 import { Logger } from 'winston';
 

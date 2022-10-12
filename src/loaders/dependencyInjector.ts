@@ -2,8 +2,8 @@ import { Container } from 'typedi';
 import MailClient from '@sendgrid/mail';
 import LoggerInstance from './logger';
 import agendaFactory from './agenda';
-import config from '@/config';
-import { RateClient } from '@/clients/cexio';
+import config from '../config';
+import { RateClient } from '../clients/cexio';
 
 export default ({ mongoConnection, models }: { mongoConnection; models: { name: string; model: any }[] }) => {
   try {
