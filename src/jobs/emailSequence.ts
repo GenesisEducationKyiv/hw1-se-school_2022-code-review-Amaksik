@@ -1,7 +1,7 @@
 import { Container } from 'typedi';
 import { Logger } from 'winston';
-import { IEmail } from '@/interfaces/IEmail';
-import MailService from '@/services/mail';
+import { IEmail } from '../interfaces/IEmail';
+import MailService from '../services/mail';
 
 export default class EmailSequenceJob {
   public async handler(job, done): Promise<void> {

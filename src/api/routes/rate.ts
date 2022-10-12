@@ -1,4 +1,4 @@
-import RateService from '@/services/rate';
+import RateService from '../../services/rate';
 import { Router, Request, Response, NextFunction } from 'express';
 import Container from 'typedi';
 import { Logger } from 'winston';

@@ -1,9 +1,9 @@
 import { Container, Service, Inject } from 'typedi';
-import { IUser, IUserInputDTO } from '@/interfaces/IUser';
-import { EventDispatcher, EventDispatcherInterface } from '@/decorators/eventDispatcher';
+import { IUser, IUserInputDTO } from '../interfaces/IUser';
+import { EventDispatcher, EventDispatcherInterface } from '../decorators/eventDispatcher';
 import events from '@/subscribers/events';
 import Agenda from 'agenda';
-import { IEmail } from '@/interfaces/IEmail';
+import { IEmail } from '../interfaces/IEmail';
 import mongoose from 'mongoose';
 import RateService from './rate';
 import { Logger } from 'winston';
@@ -31,8 +31,6 @@ export default class MailService {
       }
       this.logger.silly('Sending welcome email');
       //await this.SendEmail();
-
-      this.eventDispatcher.dispatch(events.user.subscribe, { user: userRecord });
 
       const user = userRecord.toObject();
       return user;
@@ -77,8 +75,8 @@ export default class MailService {
             this.logger.debug('Problem with retrieving receivers from db');
             throw new Error(err.message);
           }
-          jobObject.users = users.map(model => {
-            return model._doc.email;
+          jobObject.users = users.map(record => {
+            return record.email;
           });
           agendaInstance.now('send-emails', jobObject);
         });
